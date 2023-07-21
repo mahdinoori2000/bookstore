@@ -1,11 +1,11 @@
 import RenderBook from './BookState';
-import NewBook from './newBook';
+import AddNewBook from './AddBook';
 
 function Books() {
   return (
     <>
       <RenderBook />
-      <NewBook />
+      <AddNewBook />
     </>
   );
 }

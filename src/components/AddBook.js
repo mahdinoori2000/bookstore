@@ -1,4 +1,4 @@
-function NewBook() {
+function AddNewBook() {
   return (
     <div className="container">
       <h2>Add New Book</h2>
@@ -10,4 +10,4 @@ function NewBook() {
     </div>
   );
 }
-export default NewBook;
+export default AddNewBook;
