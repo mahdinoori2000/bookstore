@@ -1,8 +1,12 @@
+import RenderBook from './RenderBook';
 import NewBook from './newBook';
 
 function Books() {
   return (
-    <NewBook />
+    <>
+      <RenderBook />
+      <NewBook />
+    </>
   );
 }
 
