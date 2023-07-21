@@ -1,4 +1,4 @@
-import RenderBook from './RenderBook';
+import RenderBook from './BookState';
 import NewBook from './newBook';
 
 function Books() {
