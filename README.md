@@ -129,6 +129,7 @@ npm start
 
 - [ ]  **Functionality to add book with author**
 - [ ] **Functionality to remove book**
+- [ ] **Using redux**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
