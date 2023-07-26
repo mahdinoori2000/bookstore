@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 
-export default function BookState({ title = 'hello', author = 'jaan' }) {
+export default function BookState({
+  title = 'hello', author = 'jaan', catagory = 'none', key,
+}) {
   return (
-    <div>
-      <p>type</p>
+    <div key={key}>
+      <p>{catagory}</p>
       <h3>{title}</h3>
       <p>{author}</p>
       <ul>
@@ -18,4 +20,6 @@ export default function BookState({ title = 'hello', author = 'jaan' }) {
 BookState.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  catagory: PropTypes.string.isRequired,
+  key: PropTypes.string.isRequired,
 };

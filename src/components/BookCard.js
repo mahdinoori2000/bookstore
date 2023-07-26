@@ -1,9 +1,20 @@
+import { useSelector } from 'react-redux';
 import BookState from './BookState';
 
 function RenderBook() {
+  const books = useSelector((store) => store.books.books);
+  console.log(books);
   return (
     <section className="container">
-      <BookState title="Grammer" author="Mahdi Noori" />
+      {books.map((book) => (
+        <BookState
+          key={book.item_id}
+          title={book.title}
+          author={book.author}
+          atagory={book.catagory}
+        />
+      ))}
+      ;
       <div>
         <p>logo</p>
         <div>
