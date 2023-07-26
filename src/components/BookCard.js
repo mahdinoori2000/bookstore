@@ -3,7 +3,7 @@ import BookState from './BookState';
 function RenderBook() {
   return (
     <section className="container">
-      <BookState />
+      <BookState title="Grammer" author="Mahdi Noori" />
       <div>
         <p>logo</p>
         <div>

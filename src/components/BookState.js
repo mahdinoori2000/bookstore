@@ -1,9 +1,11 @@
-function BookState() {
+import PropTypes from 'prop-types';
+
+export default function BookState({ title, author }) {
   return (
     <div>
       <p>type</p>
-      <h3>Book Name</h3>
-      <p>Author</p>
+      <h3>{title}</h3>
+      <p>{author}</p>
       <ul>
         <li><button type="button">Comments</button></li>
         <li><button type="button">Remove</button></li>
@@ -12,4 +14,8 @@ function BookState() {
     </div>
   );
 }
-export default BookState;
+
+BookState.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+};
