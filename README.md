@@ -37,6 +37,7 @@
   <summary>🖥️ Client</summary>
   <ul>
     <li><a href="https://www.w3schools.com/REACT/">React</a></li>
+    <li><a href="https://www.redux-toolkit.js.org/">Redux-toolkit</a></li>
     <li><a href="https://www.w3schools.com/css/">CSS</a></li>
     <li><a href="https://www.w3schools.com/html/">HTML</a></li>
   </ul>
