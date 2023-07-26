@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function BookState({ title, author }) {
+export default function BookState({ title = 'hello', author = 'jaan' }) {
   return (
     <div>
       <p>type</p>
