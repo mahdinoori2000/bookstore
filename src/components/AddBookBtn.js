@@ -1,7 +1,7 @@
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/booksSlice';
 
-/* eslint-disable react/prop-types */
 function AddBookBtn({
   title,
   author,
@@ -11,7 +11,6 @@ function AddBookBtn({
 }) {
   const dispatch = useDispatch();
   function handleAddBook() {
-    console.log(title, author, id);
     dispatch(addBook(id, title, author));
     setAuthor('');
     setTitle('');
@@ -24,3 +23,10 @@ function AddBookBtn({
 }
 
 export default AddBookBtn;
+AddBookBtn.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  setTitle: PropTypes.func.isRequired,
+  setAuthor: PropTypes.func.isRequired,
+};

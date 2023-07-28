@@ -3,7 +3,6 @@ import BookState from './BookState';
 
 function RenderBook() {
   const { books } = useSelector((store) => store.books);
-  console.log(books);
   return (
     <section className="container">
       {books.map((book) => (
