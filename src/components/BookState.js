@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import RemoveBookBtn from './DeleteBookBtn';
 
 export default function BookState({ book }) {
-  const dispatch = useDispatch();
-
   return (
     <div key={book.item_id}>
       <p>{book.catagory}</p>
@@ -12,7 +9,7 @@ export default function BookState({ book }) {
       <p>{book.author}</p>
       <ul>
         <li><button type="button">Comments</button></li>
-        <li><button type="button" onClick={() => { dispatch(removeBook(book.item_id)); }}>Remove</button></li>
+        <li><RemoveBookBtn id={book.item_id} /></li>
         <li><button type="button">Edit</button></li>
       </ul>
     </div>
