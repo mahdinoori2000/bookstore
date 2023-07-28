@@ -2,17 +2,12 @@ import { useSelector } from 'react-redux';
 import BookState from './BookState';
 
 function RenderBook() {
-  const books = useSelector((store) => store.books.books);
+  const { books } = useSelector((store) => store.books);
   console.log(books);
   return (
     <section className="container">
       {books.map((book) => (
-        <BookState
-          key={book.item_id}
-          title={book.title}
-          author={book.author}
-          atagory={book.catagory}
-        />
+        <BookState key={book.item_id} book={book} />
       ))}
       ;
       <div>
