@@ -1,0 +1,32 @@
+.form h2 {
+    color: #888888;
+    text-align: left;
+    margin-bottom: 10px;
+}
+form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-book-title {
+    width: 50%;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 0 5px;
+}
+
+.input-book-author {
+    width: 20%;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 0 5px;
+}
+
+.input-book-author::placeholder,
+.input-book-title::placeholder {
+    padding: 0 5px;
+    font-size: 14px;
+}

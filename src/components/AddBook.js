@@ -1,24 +1,27 @@
 import { useState } from 'react';
 import AddBookBtn from './AddBookBtn';
+import './AddBook.css';
 
 function AddNewBook() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const id = Date.now();
   return (
-    <div className="container">
-      <h2>Add New Book</h2>
+    <section className="form">
+      <h2>ADD NEW BOOK</h2>
       <form>
         <input
           type="text"
-          className="book-title"
+          className="input-book-title"
           value={title}
+          placeholder="Book Title"
           onChange={(e) => setTitle(e.target.value)}
         />
         <input
           type="text"
-          className="book-author"
+          className="input-book-author"
           value={author}
+          placeholder="Book Author"
           onChange={(e) => setAuthor(e.target.value)}
         />
         <AddBookBtn
@@ -29,7 +32,7 @@ function AddNewBook() {
           setAuthor={setAuthor}
         />
       </form>
-    </div>
+    </section>
   );
 }
 export default AddNewBook;
