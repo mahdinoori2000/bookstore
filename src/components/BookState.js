@@ -5,14 +5,14 @@ import './BookState.css';
 export default function BookState({ book }) {
   return (
     <div key={book.item_id} className="book-card">
-      <div className="book-details">
+      <div className="book-details roboto-font">
         <p className="book-catagory">Catagory</p>
-        <h3 className="secondary-header">{book.title}</h3>
-        <p className="book-author">{book.author}</p>
+        <h3 className="secondary-header roboto-font">{book.title}</h3>
+        <p className="book-author roboto-font">{book.author}</p>
         <ul>
-          <li><button type="button">Comments</button></li>
+          <li><button type="button" className="roboto-font">Comments</button></li>
           <li><RemoveBookBtn id={book.item_id} /></li>
-          <li><button type="button">Edit</button></li>
+          <li><button type="button" className="roboto-font">Edit</button></li>
         </ul>
       </div>
       <div className="book-stutas">

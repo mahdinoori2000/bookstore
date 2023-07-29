@@ -1,3 +1,6 @@
+.roboto-font {
+    font-family: 'RobotoSlab', sans-serif;
+}
 .book-card {
   display: flex;
   align-items: center;
@@ -12,7 +15,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-family: 'RobotoSlab', sans-serif;
 }
 
 .book-catagory {
@@ -24,7 +26,6 @@
 
 .secondary-header {
   color: #121212;
-  font-family: 'RobotoSlab', sans-serif;
   font-size: 22px;
   margin-bottom: 5px;
 }
@@ -33,7 +34,6 @@
   color: #4386bf;
   font-size: 14px;
   margin-bottom: 8px;
-  font-family: 'RobotoSlab', sans-serif;
 }
 
 .book-chapter button {
@@ -55,7 +55,6 @@
   background: none;
   border: none;
   font-size: 14px;
-  font-family: 'RobotoSlab', sans-serif;
 }
 
 .book-details ul li button:hover {
