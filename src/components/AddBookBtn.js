@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/booksSlice';
+import './AddBookBtn.css';
 
 function AddBookBtn({
   title,
@@ -16,7 +17,7 @@ function AddBookBtn({
     setTitle('');
   }
   return (
-    <button onClick={handleAddBook} type="button">
+    <button className="submit-btn" onClick={handleAddBook} type="button">
       Add Book
     </button>
   );
