@@ -7,21 +7,27 @@ const initialState = {
   error: '',
 };
 
-const apiUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/NMdtmp7Xf82moZUrly0Y/books/';
-const getData = (data) => data.map((id, [book]) => {
-  const { title, author, catagory } = book;
+const apiUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/NMdtmp7Xf82moZUrly0Y/books';
+const getData = (data) => data.map(([id, [book]]) => {
+  const { author, title, category } = book;
+  console.log(book);
   return {
-    id,
+    item_id: id,
     title,
     author,
-    catagory,
+    category,
   };
 });
 
 export const fetchBooks = createAsyncThunk('books/fetchbooks', async () => {
-  const response = axios.get(apiUrl);
-  const { data } = response;
-  return getData(Object.entries(data));
+  try {
+    const response = await axios.get(apiUrl);
+    const { data } = response;
+    console.log('api data', data);
+    return getData(Object.entries(data));
+  } catch (error) {
+    throw Error(error);
+  }
 });
 
 const booksSlice = createSlice({
@@ -39,6 +45,7 @@ const booksSlice = createSlice({
       }))
       .addCase(fetchBooks.rejected, (state, action) => ({
         ...state,
+        loading: false,
         error: action.error.message,
       }));
   },
@@ -75,16 +82,3 @@ export default booksSlice.reducer;
 // });
 
 // console.log(fetchBooks());
-// export const addBook = createAsyncThunk('books/addBook', async ({ id, title, author }) => {
-//   const response = await axios.post(apiUrl, {
-//     item_id: id,
-//     title,
-//     author,
-//     category: 'none',
-//   }, {
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   });
-//   return response.data;
-// });

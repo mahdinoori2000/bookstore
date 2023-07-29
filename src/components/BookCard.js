@@ -9,7 +9,7 @@ function RenderBook() {
   let data;
   useEffect(() => {
     dispatch(fetchBooks());
-  }, [dispatch, loading]);
+  }, []);
   if (loading) {
     data = <div>Loading...</div>;
   } else if (books) {
