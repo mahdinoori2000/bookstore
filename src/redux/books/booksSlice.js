@@ -7,24 +7,31 @@ const initialState = {
   error: '',
 };
 
-// const uniqueId = 'NMdtmp7Xf82moZUrly0Y';
 const apiUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/NMdtmp7Xf82moZUrly0Y/books/';
-
-const fetchBooks = createAsyncThunk('books/fetchbooks', async () => {
-  const response = await axios.get(apiUrl);
-  const data = response;
-  return ('data', data);
+const getData = (data) => data.map((id, [book]) => {
+  const { title, author, catagory } = book;
+  return {
+    id,
+    title,
+    author,
+    catagory,
+  };
 });
-console.log(fetchBooks());
+
+export const fetchBooks = createAsyncThunk('books/fetchbooks', async () => {
+  const response = axios.get(apiUrl);
+  const { data } = response;
+  return getData(Object.entries(data));
+});
+
 const booksSlice = createSlice({
   name: 'books',
   initialState,
   extraReducers: (builder) => {
-    builder
-      .addCase(fetchBooks.pending, (state) => ({
-        ...state,
-        loading: true,
-      }))
+    builder.addCase(fetchBooks.pending, (state) => ({
+      ...state,
+      loading: true,
+    }))
       .addCase(fetchBooks.fulfilled, (state, action) => ({
         ...state,
         loading: false,
@@ -33,15 +40,12 @@ const booksSlice = createSlice({
       .addCase(fetchBooks.rejected, (state, action) => ({
         ...state,
         error: action.error.message,
-      }))
+      }));
   },
-
 });
 
-export const { addBook, removeBook } = booksSlice.actions;
+export const { removeBook } = booksSlice.actions;
 export default booksSlice.reducer;
-
-
 
 // reducers: {
 //   addBook: {
@@ -64,3 +68,23 @@ export default booksSlice.reducer;
 //     }
 //   ),
 // },
+// const fetchBooks = createAsyncThunk('books/fetchbooks', async () => {
+//   const response = await axios.get(apiUrl);
+//   const { data } = response;
+//   return ('data', data);
+// });
+
+// console.log(fetchBooks());
+// export const addBook = createAsyncThunk('books/addBook', async ({ id, title, author }) => {
+//   const response = await axios.post(apiUrl, {
+//     item_id: id,
+//     title,
+//     author,
+//     category: 'none',
+//   }, {
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   });
+//   return response.data;
+// });

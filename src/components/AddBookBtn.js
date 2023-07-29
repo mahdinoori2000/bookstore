@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+// import { useDispatch } from 'react-redux';
+// import { addBook } from '../redux/books/booksSlice';
 
 function AddBookBtn({
   title,
@@ -9,9 +9,10 @@ function AddBookBtn({
   setTitle,
   setAuthor,
 }) {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   function handleAddBook() {
-    dispatch(addBook(id, title, author));
+    console.log(id, title, author);
+    // dispatch(addBook({ id, title, author }));
     setAuthor('');
     setTitle('');
   }
