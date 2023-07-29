@@ -1,0 +1,55 @@
+.book-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border: solid 1px #eee;
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'RobotoSlab';
+}
+
+.book-catagory {
+    color: #121212;
+    opacity: 0.5;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.secondary-header {
+    color: #121212;
+    font-family: 'RobotoSlab';
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.book-author {
+    color: #4386bf;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-family: 'RobotoSlab';
+}
+
+.book-details ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.book-details ul li button {
+    color: #4386bf;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-family: 'RobotoSlab';
+}
+
+.book-details ul li button:hover {
+    cursor: pointer;
+}
