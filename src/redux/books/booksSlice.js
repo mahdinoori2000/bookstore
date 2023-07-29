@@ -1,33 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const apiUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/NMdtmp7Xf82moZUrly0Y/books';
+
 const initialState = {
   loading: false,
   books: [],
   error: '',
 };
-
-const apiUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/NMdtmp7Xf82moZUrly0Y/books';
-
-export const addBook = createAsyncThunk('books/addBook', async ({ id, title, author }) => {
-  const response = await axios.post(apiUrl, {
-    item_id: id,
-    title,
-    author,
-    category: 'none',
-  }, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-  window.location.reload();
-  return response.data;
-});
-
-export const removeBook = createAsyncThunk('books/removeBook', async (id) => {
-  await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/NMdtmp7Xf82moZUrly0Y/books/${id}`);
-  window.location.reload();
-});
 
 const getData = (data) => data.map(([id, [book]]) => {
   const { author, title, category } = book;
@@ -39,6 +19,7 @@ const getData = (data) => data.map(([id, [book]]) => {
   };
 });
 
+// Fetch book from API
 export const fetchBooks = createAsyncThunk('books/fetchbooks', async () => {
   try {
     const response = await axios.get(apiUrl);
@@ -70,5 +51,25 @@ const booksSlice = createSlice({
   },
 });
 
-// export const {  } = booksSlice.actions;
+// Add book to the api
+export const addBook = createAsyncThunk('books/addBook', async ({ id, title, author }) => {
+  const response = await axios.post(apiUrl, {
+    item_id: id,
+    title,
+    author,
+    category: 'none',
+  }, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  window.location.reload();
+  return response.data;
+});
+
+// Remove book from api in specific id
+export const removeBook = createAsyncThunk('books/removeBook', async (id) => {
+  await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/NMdtmp7Xf82moZUrly0Y/books/${id}`);
+  window.location.reload();
+});
 export default booksSlice.reducer;
