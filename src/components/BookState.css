@@ -1,6 +1,7 @@
 .roboto-font {
-    font-family: 'RobotoSlab', sans-serif;
+  font-family: 'RobotoSlab', sans-serif;
 }
+
 .book-card {
   display: flex;
   align-items: center;
@@ -76,7 +77,7 @@
 }
 
 .percentage p:last-child {
-  color: #e8e8e8;
+  color: #aaa;
 }
 
 .book-chapter p:first-child {

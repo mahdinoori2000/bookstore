@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import RemoveBookBtn from './DeleteBookBtn';
 import './BookState.css';
 
@@ -16,11 +17,11 @@ export default function BookState({ book }) {
         </ul>
       </div>
       <div className="book-stutas">
-        <div className="circle-wrapper">
-          <div className="circle-progress" />
+        <div style={{ width: '4.25rem', height: '4.25rem' }}>
+          <CircularProgressbar value={64} styles={buildStyles({ pathColor: '#0290ff' })} />
         </div>
         <div className="percentage">
-          <p>50%</p>
+          <p>64%</p>
           <p>completed</p>
         </div>
       </div>
