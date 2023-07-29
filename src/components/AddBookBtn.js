@@ -11,7 +11,7 @@ function AddBookBtn({
 }) {
   const dispatch = useDispatch();
   function handleAddBook() {
-    dispatch(addBook(id, title, author));
+    dispatch(addBook({ id, title, author }));
     setAuthor('');
     setTitle('');
   }

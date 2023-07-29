@@ -4,7 +4,7 @@ import RemoveBookBtn from './DeleteBookBtn';
 export default function BookState({ book }) {
   return (
     <div key={book.item_id}>
-      <p>{book.catagory}</p>
+      <p>Catagory</p>
       <h3>{book.title}</h3>
       <p>{book.author}</p>
       <ul>
@@ -20,7 +20,6 @@ BookState.propTypes = {
   book: PropTypes.shape({
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
-    catagory: PropTypes.string.isRequired,
-    item_id: PropTypes.number.isRequired,
+    item_id: PropTypes.string.isRequired,
   }).isRequired,
 };
