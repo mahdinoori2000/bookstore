@@ -8,10 +8,10 @@ function Navigation() {
         <h1 className="primary-header">Bookstore CMS</h1>
         <ul>
           <li>
-            <NavLink to="/">Books</NavLink>
+            <NavLink to="/">BOOKS</NavLink>
           </li>
           <li>
-            <NavLink to="catagories">catagories</NavLink>
+            <NavLink to="catagories">CATAGORIES</NavLink>
           </li>
         </ul>
       </div>
