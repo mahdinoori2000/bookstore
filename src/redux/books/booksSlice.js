@@ -20,11 +20,13 @@ export const addBook = createAsyncThunk('books/addBook', async ({ id, title, aut
       'Content-Type': 'application/json',
     },
   });
+  window.location.reload();
   return response.data;
 });
 
 export const removeBook = createAsyncThunk('books/removeBook', async (id) => {
   await axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/NMdtmp7Xf82moZUrly0Y/books/${id}`);
+  window.location.reload();
 });
 
 const getData = (data) => data.map(([id, [book]]) => {

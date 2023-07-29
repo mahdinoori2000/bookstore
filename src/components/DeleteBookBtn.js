@@ -9,5 +9,5 @@ export default function RemoveBookBtn({ id }) {
   );
 }
 RemoveBookBtn.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
