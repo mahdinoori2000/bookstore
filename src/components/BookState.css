@@ -53,3 +53,31 @@
 .book-details ul li button:hover {
     cursor: pointer;
 }
+.book-stutas {
+    display: flex;
+}
+.percentage p:first-child {
+    color: #000000;
+    font-size: 32px;
+}
+.percentage p:last-child {
+    color: #e8e8e8;
+
+}
+.book-chapter p:first-child {
+    font-size: 14px;
+    opacity: 0.5;
+    margin-bottom: 5px;
+}
+.book-chapter p:nth-child(2) {
+    color: #121212;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.book-chapter button {
+    color: #ddd;
+    background-color:#0290ff;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 22px;
+}

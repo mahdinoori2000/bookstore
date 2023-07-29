@@ -15,14 +15,14 @@ export default function BookState({ book }) {
           <li><button type="button">Edit</button></li>
         </ul>
       </div>
-      <div>
+      <div className="book-stutas">
         <p>logo</p>
-        <div>
+        <div className="percentage">
           <p>64%</p>
           <p>completed</p>
         </div>
       </div>
-      <div>
+      <div className="book-chapter">
         <p>Current Chapter</p>
         <p>Chapter 17</p>
         <button type="button">Update Progress</button>
