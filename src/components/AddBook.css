@@ -14,7 +14,7 @@ form {
     height: 30px;
     border-radius: 4px;
     border: 1px solid #ddd;
-    padding: 0 5px;
+    padding: 0 7px;
 }
 
 .input-book-author {
@@ -22,11 +22,5 @@ form {
     height: 30px;
     border-radius: 4px;
     border: 1px solid #ddd;
-    padding: 0 5px;
-}
-
-.input-book-author::placeholder,
-.input-book-title::placeholder {
-    padding: 0 5px;
-    font-size: 14px;
+    padding: 0 7px;
 }

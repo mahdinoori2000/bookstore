@@ -16,9 +16,11 @@ export default function BookState({ book }) {
         </ul>
       </div>
       <div className="book-stutas">
-        <p>logo</p>
+        <div className="circle-wrapper">
+          <div className="circle-progress" />
+        </div>
         <div className="percentage">
-          <p>64%</p>
+          <p>50%</p>
           <p>completed</p>
         </div>
       </div>
