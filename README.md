@@ -139,7 +139,7 @@ npm start
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-Contributions to Math Magicians are welcome! 
+Contributions to Bookstore are welcome! 
 
 Feel free to check the [issues page](https://github.com/mahdinoori2000/bookstore/issues).
 
